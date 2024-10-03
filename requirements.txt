@@ -1,13 +1,6 @@
-numpy
-pandas
-flask
-pydantic
+pydantic>=2.0.0
 fastapi
 uvicorn
-scikit-learn
-transformers
-torch
-pathlib
 llama-cpp-python
 chromadb
 sentence-transformers
