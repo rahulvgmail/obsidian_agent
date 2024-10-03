@@ -7,3 +7,5 @@ scikit-learn
 transformers
 torch
 pathlib
+llama-cpp-python
+pydantic-settings
