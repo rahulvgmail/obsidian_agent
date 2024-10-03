@@ -9,3 +9,5 @@ torch
 pathlib
 llama-cpp-python
 pydantic-settings
+chromadb
+sentence-transformers

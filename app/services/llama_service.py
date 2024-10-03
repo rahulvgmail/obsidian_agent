@@ -7,13 +7,13 @@ class LlamaService:
         except Exception as e:
             raise RuntimeError(f"Failed to initialize Llama model: {str(e)}")
 
-    def chat(self, prompt):
+    def generate(self, prompt, max_tokens=100):
         try:
-            response = self.llm(prompt, max_tokens=100)
+            response = self.llm(prompt, max_tokens=max_tokens)
             return response['choices'][0]['text']
         except Exception as e:
-            return f"Error in chat: {str(e)}"
+            return f"Error in generation: {str(e)}"
 
-    def review_file(self, file_content):
-        prompt = f"Please review the following file content:\n\n{file_content}\n\nProvide a summary and any potential issues:"
-        return self.chat(prompt)
+    def generate_with_context(self, query, context, max_tokens=100):
+        prompt = f"Context:\n{context}\n\nQuery: {query}\n\nResponse:"
+        return self.generate(prompt, max_tokens)
